@@ -1,0 +1,56 @@
+<%- include('templates/_header',{
+	page: 'home',
+	title:'タイトルを入力してください'
+}) %>
+<main class="l-main">
+	<div class="l-wrapper">
+		<div class="board-wrap">
+			<div class="board">
+
+				<div class="board-outer-bull js-trigger" data-number="50" data-multiple="1"></div>
+
+				<div class="board-inner-bull js-trigger" data-number="50" data-multiple="1"></div>
+
+				<div class="board-single-inner">
+				<% for (var i = 1; i < 21; i++) { -%>
+					<div class="board-single-inner__item js-trigger" data-number="<%= i %>" data-multiple="1"></div>
+				<% } -%>
+				</div>
+
+				<div class="board-triple">
+				<% for (var i = 1; i < 21; i++) { -%>
+					<div class="board-triple__item js-trigger" data-number="<%= i %>" data-multiple="3"></div>
+				<% } -%>
+				</div>
+
+				<div class="board-single-outer">
+				<% for (var i = 1; i < 21; i++) { -%>
+					<div class="board-single-outer__item js-trigger" data-number="<%= i %>" data-multiple="1"></div>
+				<% } -%>
+				</div>
+				
+				<div class="board-double">
+				<% for (var i = 1; i < 21; i++) { -%>
+					<div class="board-double__item js-trigger" data-number="<%= i %>" data-multiple="2"></div>
+				<% } -%>
+				</div>
+
+			</div>
+
+			<div class="test">
+				<div class="test-throw"></div>
+				<div class="test-countup"></div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+
+
+
+</main>
+<%- include('templates/_footer') %>

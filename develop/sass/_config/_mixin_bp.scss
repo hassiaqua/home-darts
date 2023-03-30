@@ -1,0 +1,47 @@
+$sp: 767px;
+$pc: $sp+1;
+@mixin mq($media) {
+	@if $media == sp { 
+		@media screen and (max-width: #{$sp}) {
+			/* sp */
+			@content;
+		}
+	}
+	@else if $media == pc { 
+		@media screen and (min-width: #{$pc}) {
+			/* pc */
+			@content;
+		}
+	}
+	@else if $media == xsm { 
+		@media screen and (max-width: 374px) {
+			/* iPhone5s */
+			@content;
+		}
+	}
+}
+
+
+// bootstrap
+// @mixin mq($media) {
+// 	@if $media == sm {
+// 		@media (min-width: 576px) {
+// 			@content;
+// 		}
+// 	}
+// 	@else if $media == md {
+// 		@media (min-width: 768px) {
+// 			@content;
+// 		}
+// 	}
+// 	@else if $media == lg {
+// 		@media (min-width: 992px) {
+// 			@content;
+// 		}
+// 	}
+// 	@else if $media == xl {
+// 		@media (min-width: 1200px) {
+// 			@content;
+// 		}
+// 	}
+// }

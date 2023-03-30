@@ -1,0 +1,24 @@
+////////////////////////////////
+// 色指定
+////////////////////////////////
+$black: #000;
+$red: #F00;
+$blue: #00F;
+
+////////////////////////////////
+// フォント指定
+////////////////////////////////
+$hiragino: Hiragino Sans, "ヒラギノ角ゴシック", Hiragino Kaku Gothic ProN, "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+$yugo: "游ゴシック体", "Yu Gothic", YuGothic, Hiragino Sans, "ヒラギノ角ゴシック", Hiragino Kaku Gothic ProN, "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+$mincho: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+$helvetica: Helvetica,"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+$sans: 'Noto Sans JP', sans-serif;
+$serif: 'Noto Serif JP', serif;
+
+
+////////////////////////////////
+// ホバー時の統一
+////////////////////////////////
+$hovertran: .4s; //transitionの時間指定
+$hoveropa: .6; //透過の数値指定
+

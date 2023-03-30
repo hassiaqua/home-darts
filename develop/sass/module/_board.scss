@@ -1,0 +1,129 @@
+@use "../_config/" as *;
+@use "sass:math";
+
+$points: 20, 1, 18, 4, 13, 6, 10, 15, 2, 17, 3, 19, 7, 16, 8, 11, 14, 9, 12, 5;
+
+.board-wrap{
+	@include mq(pc){
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+.board{
+	position: relative;
+	width: 600px;
+	height: 600px;
+	width: 50vw;
+	height: 50vw;
+	border: 2px solid #000;
+	border-radius: 50%;
+}
+
+.board-outer-bull{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background: $red;
+	@include calc-board(4.4);
+	border-radius: 50%;
+	z-index: 6;
+}
+
+.board-inner-bull{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background: $black;
+	@include calc-board(1.8);
+	border-radius: 50%;
+	z-index: 7;
+}
+
+.board-single-inner{
+	&__item{
+		@each $i in $points {
+			&:nth-of-type(#{$i}) {
+				@include common-board;
+				z-index: 5;
+				border-top: 140px solid #000;
+				border-top: 140px solid #000;
+				border-right: 22px solid transparent;
+				border-bottom: 0px solid transparent;
+				border-left: 22px solid transparent;
+				transform: translate(-50%, -100%) rotate(#{18*(index($points, $i)-1)}deg);
+				@if (index($points, $i)-1) % 2 == 0 {
+					border-top-color: black;
+				} @else {
+					border-top-color: white;
+				}
+			}
+		}
+	}
+}
+
+.board-triple{
+	&__item{
+		@each $i in $points {
+			&:nth-of-type(#{$i}) {
+				@include common-board;
+				z-index: 4;
+				border-top: 160px solid #000;
+				border-right: 25.14px solid transparent;
+				border-bottom: 0px solid transparent;
+				border-left: 25.14px solid transparent;
+				transform: translate(-50%, -100%) rotate(#{18*(index($points, $i)-1)}deg);
+				@if (index($points, $i)-1) % 2 == 0 {
+					border-top-color: $red;
+				} @else {
+					border-top-color: $blue;
+				}
+			}
+		}
+	}
+}
+
+
+.board-single-outer{
+	&__item{
+		@each $i in $points {
+			&:nth-of-type(#{$i}) {
+				@include common-board;
+				z-index: 3;
+				border-top: 280px solid #000;
+				border-right: 44px solid transparent;
+				border-bottom: 0px solid transparent;
+				border-left: 44px solid transparent;
+				transform: translate(-50%, -100%) rotate(#{18*(index($points, $i)-1)}deg);
+				@if (index($points, $i)-1) % 2 == 0 {
+					border-top-color: black;
+				} @else {
+					border-top-color: white;
+				}
+			}
+		}
+	}
+}
+
+.board-double{
+	&__item{
+		@each $i in $points {
+			&:nth-of-type(#{$i}) {
+				@include common-board;
+				z-index: 2;
+				border-top: 300px solid #000;
+				border-right: 47.14px solid transparent;
+				border-bottom: 0px solid transparent;
+				border-left: 47.14px solid transparent;
+				transform: translate(-50%, -100%) rotate(#{18*(index($points, $i)-1)}deg);
+				@if (index($points, $i)-1) % 2 == 0 {
+					border-top-color: $red;
+				} @else {
+					border-top-color: $blue;
+				}
+			}
+		}
+	}
+}

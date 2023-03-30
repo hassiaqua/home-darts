@@ -1,0 +1,33 @@
+@use "../_config/" as *;
+@use "sass:math";
+
+.test{
+	@include center;
+	flex-direction: column;
+	width: 100%;
+	padding: 10px;
+	border: 2px solid #000;
+	@include mq(pc){
+		width: 300px;
+		height: 150px;
+		margin-left: 50px;
+	}
+}
+
+.test-throw{
+	@include center;
+	&__item{
+		font-size: 2rem;
+		font-weight: 700;
+		&:not(:last-child){
+			margin-right: 20px;
+		}
+	}
+}
+
+.test-countup{
+	margin-top: 15px;
+	font-size: 3rem;
+	font-weight: 700;
+	color: $blue;
+}

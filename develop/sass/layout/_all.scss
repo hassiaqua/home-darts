@@ -1,0 +1,61 @@
+@use "../_config/" as *;
+@use "sass:math";
+
+.l-body {
+	width: 100%;
+	&.is-fixed{
+		position: fixed;
+	}
+}
+
+.l-header {
+
+}
+
+.l-footer {
+
+}
+
+.l-main{
+	
+}
+
+.l-wrapper {
+	position: relative;
+	width: 90%; //要変更
+	margin-left: auto;
+	margin-right: auto;
+	@include mq(pc) {
+		max-width: 1200px; //要変更
+	}
+}
+
+
+// @for $i from 1 through 12 {
+// 	$nth1: #{$i}n;
+// 	$nth2: $i+(-1);
+// 	.l-offset-#{$i} {
+// 		@include mq(pc) {
+// 			margin-left: (100% / 12 * $i);
+// 		}
+// 	}
+// }
+
+// @for $i from 1 through 12 {
+// 	$nth1: #{$i}n;
+// 	$nth2: $i+(-1);
+// 	.l-col-#{$i} {
+// 		width: 100%;
+// 		@include mq(pc) {
+// 			width: (100% / 12 * $i);
+// 		}
+// 	}
+// 	.l-col-lg-#{$i} {
+// 		width: 100%;
+// 		@include mq(pc) {
+// 			width: (100% / 12 * $i);
+// 		}
+// 	}
+// }
+
+

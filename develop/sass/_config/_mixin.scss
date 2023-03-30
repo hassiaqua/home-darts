@@ -1,0 +1,71 @@
+@use "_variables" as *;
+@use "sass:math";
+
+////////////////////////////////
+// ブロック系
+////////////////////////////////
+@mixin clearfix() {
+	&::before,
+	&::after {
+		content: "";
+		display: table;
+	}
+	&::after {
+		clear: both;
+	}
+}
+
+@mixin center() {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+////////////////////////////////
+// 画像系
+////////////////////////////////
+@mixin img-fit() {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+////////////////////////////////
+// フォント
+////////////////////////////////
+@mixin font($fontsize, $lineheight) {
+	$rem: $fontsize / 10;
+	$linS: $lineheight / $fontsize;
+	font-size: #{$rem}rem;
+	line-height: $linS;
+}
+
+////////////////////////////////
+// ボード計算
+////////////////////////////////
+@mixin common-board() {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	transform-origin: bottom;
+}
+
+@mixin calc-board($cm) {
+	$ratio: $cm / 39.4 * 100%;
+	width: #{$ratio};
+	height: #{$ratio};
+}
+
+
+
+////////////////////////////////
+// その他
+////////////////////////////////
+@mixin hovertran() {
+	transition: $hovertran;
+}
+
+

@@ -1,0 +1,53 @@
+@use "../_config/" as *;
+@use "sass:math";
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: $yugo;
+	font-size: 1.4rem;
+	// font-feature-settings: "palt";
+	// -webkit-font-smoothing: antialiased;
+	// -moz-osx-font-smoothing: grayscale;
+	color: $black;
+	word-wrap: break-word;
+}
+
+a {
+	color: inherit;
+	&:hover{
+
+	}
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+input, textarea, select, button {
+	font: inherit;
+	color: inherit;
+	appearance: none;
+	outline: none;
+}
+
+select {
+	&::-ms-expand {
+		display: none;
+	}
+}
+
+button {
+	cursor: pointer;
+}
+
+/* for development */
+pre {
+	padding: 15px;
+	background: #eee;
+	font-size: 1.2rem;
+	line-height: 1.2;
+}

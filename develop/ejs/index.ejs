@@ -1,56 +1,24 @@
-<%- include('templates/_header',{
-	page: 'home',
-	title:'タイトルを入力してください'
-}) %>
-<main class="l-main">
-	<div class="l-wrapper">
-		<div class="board-wrap">
-			<div class="board">
-
-				<div class="board-outer-bull js-trigger" data-number="50" data-multiple="1"></div>
-
-				<div class="board-inner-bull js-trigger" data-number="50" data-multiple="1"></div>
-
-				<div class="board-single-inner">
-				<% for (var i = 1; i < 21; i++) { -%>
-					<div class="board-single-inner__item js-trigger" data-number="<%= i %>" data-multiple="1"></div>
-				<% } -%>
-				</div>
-
-				<div class="board-triple">
-				<% for (var i = 1; i < 21; i++) { -%>
-					<div class="board-triple__item js-trigger" data-number="<%= i %>" data-multiple="3"></div>
-				<% } -%>
-				</div>
-
-				<div class="board-single-outer">
-				<% for (var i = 1; i < 21; i++) { -%>
-					<div class="board-single-outer__item js-trigger" data-number="<%= i %>" data-multiple="1"></div>
-				<% } -%>
-				</div>
-				
-				<div class="board-double">
-				<% for (var i = 1; i < 21; i++) { -%>
-					<div class="board-double__item js-trigger" data-number="<%= i %>" data-multiple="2"></div>
-				<% } -%>
-				</div>
-
-			</div>
-
-			<div class="test">
-				<div class="test-throw"></div>
-				<div class="test-countup"></div>
-
-			</div>
-
-		</div>
-
-	</div>
-
-
-
-
-
-
-</main>
-<%- include('templates/_footer') %>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>HTML確認用インデックス</title>
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+<link rel="stylesheet" type="text/css" href="https://www.grooweb.jp/css/html_check.css">
+</head>
+<body>
+<header>
+	<h1>home darts</h1>
+	<h2>HTML確認用インデックス</h2>
+</header>
+<div class="body">
+<div>
+	<table>
+		<tr><th>program</th><td><a href="program.html">program.html</a></td></tr>
+		<tr><th>board</th><td><a href="board.html">board.html</a></td></tr>
+		<!-- <tr><th>ページ名</th><td><a href="xxxxx.html">xxxxx.html</a></td></tr> -->
+	</table>
+</div>
+<!-- /.body --></div>
+</body>
+</html>

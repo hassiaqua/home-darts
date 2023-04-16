@@ -59,7 +59,16 @@
 	height: #{$ratio};
 }
 
-
+////////////////////////////////
+// リセット
+////////////////////////////////
+@mixin reset-button() {
+	padding: 0;
+	border: none;
+	background: transparent;
+	color: #000000;
+	border-radius: 0;
+}
 
 ////////////////////////////////
 // その他

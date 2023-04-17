@@ -17,7 +17,7 @@
 }
 
 .l-main{
-	
+	padding: 50px 0;
 }
 
 .l-wrapper {
@@ -30,32 +30,19 @@
 	}
 }
 
+.l-program{
+	&__trigger{
+		margin-bottom: 30px;
+	}
+	&__result{
+		display: flex;
+	}
+	&__progress{
+		width: 150px;
+		margin-right: 20px;
+	}
+	&__score{
+		width: 300px;
 
-// @for $i from 1 through 12 {
-// 	$nth1: #{$i}n;
-// 	$nth2: $i+(-1);
-// 	.l-offset-#{$i} {
-// 		@include mq(pc) {
-// 			margin-left: (100% / 12 * $i);
-// 		}
-// 	}
-// }
-
-// @for $i from 1 through 12 {
-// 	$nth1: #{$i}n;
-// 	$nth2: $i+(-1);
-// 	.l-col-#{$i} {
-// 		width: 100%;
-// 		@include mq(pc) {
-// 			width: (100% / 12 * $i);
-// 		}
-// 	}
-// 	.l-col-lg-#{$i} {
-// 		width: 100%;
-// 		@include mq(pc) {
-// 			width: (100% / 12 * $i);
-// 		}
-// 	}
-// }
-
-
+	}
+}

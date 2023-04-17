@@ -260,11 +260,34 @@ pre {
 	position: fixed;
 }
 
+.l-main {
+	padding: 50px 0;
+}
+
 .l-wrapper {
 	position: relative;
 	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.l-program__trigger {
+	margin-bottom: 30px;
+}
+
+.l-program__result {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.l-program__progress {
+	width: 150px;
+	margin-right: 20px;
+}
+
+.l-program__score {
+	width: 300px;
 }
 
 .test {
@@ -312,6 +335,22 @@ pre {
 	font-size: 3rem;
 	font-weight: 700;
 	color: #00F;
+}
+
+.head-1 {
+	margin-bottom: 1em;
+	font-size: 3rem;
+	line-height: 1.5;
+	font-weight: 700;
+	text-align: center;
+}
+
+.head-2 {
+	margin-bottom: 1em;
+	font-size: 2rem;
+	line-height: 1.5;
+	font-weight: 700;
+	border-bottom: 2px solid #333;
 }
 
 .board {
@@ -1984,6 +2023,7 @@ pre {
 	text-align: center;
 	vertical-align: middle;
 	background: #ccc;
+	font-size: 1.6rem;
 }
 
 .trigger__col {
@@ -2007,6 +2047,42 @@ pre {
 }
 
 .trigger__col button:hover {
+	background: #F00;
+	color: #FFFFFF;
+}
+
+.trigger__col button:disabled {
+	background: #CCCCCC;
+	pointer-events: none;
+}
+
+.trigger__col button:active {
+	background: #333;
+	color: #FFFFFF;
+}
+
+.progress__row {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	margin-bottom: 10px;
+}
+
+.progress__col {
+	width: 33.3333333333%;
+	font-size: 2rem;
+	font-weight: 700;
+	text-align: center;
+}
+
+.score {
+	font-size: 8rem;
+	font-weight: 700;
+	text-align: center;
+	color: #F00;
+}
+
+.score.is-end {
 	background: #F00;
 	color: #FFFFFF;
 }

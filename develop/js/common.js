@@ -102,73 +102,117 @@ function input() {
 }
 input();
 
-/* カウントアップ */
 
-let countup_array = [];
+/* カウントアップ
+*********************************************/
+let countup_array = [];//得点の配列
+let countup_array_leg = [];//得点の配列を階層化
+let countup_array_score = [];//得点の合計
+let $element_progress = $('.js-progress');//.progress取得
+let $element_score = $('.js-score');//.score取得
+
 function countup(score) {
 
+	const leg = 8;
+
+	/* 得点の配列 */
 	countup_array.push(score);
 
-	// console.log(score);
-	// console.log(countup_array);
+	/* 配列を3つずつ分割して階層化 */
+	for (let i = 0; i < countup_array.length; i += 3) {
+		countup_array_leg.push(countup_array.slice(i, i + 3));
+	}
 
+	/* 特典の合計 */
+	countup_array_score
+	countup_array_score = countup_array.reduce(function(sum, element){
+		return sum + element;
+	}, 0);
 
+	/* HTML出力 */
+
+	//初期化
+	$element_progress.html('');
+	$element_score.html('');
+
+	//progress
+	for (let i = 0; i < countup_array_leg.length; i++) {
+		const $row = $('<div>').addClass('progress__row');
+		for (let j = 0; j < countup_array_leg[i].length; j++) {
+			const $col = $('<div>').addClass('progress__col').text(countup_array_leg[i][j]);
+			$row.append($col);
+		}
+		$element_progress.append($row);
+	}
+
+	//score
+	$element_score.html(countup_array_score);
+
+	//全て投げ終わった
+	if (countup_array.length >= leg * 3) {
+		$element_score.addClass('is-end');
+		$('.js-trigger').prop('disabled',true);
+
+	}
+
+	//配列初期化
+	countup_array_leg = [];
 }
 
-	var score = 0;
-  var round = 1;
-  var scores = [];
+	// var score = 0;
+	// var round = 1;
+	// var scores = [];
 
-  function updateProgress() {
-    var progress = '';
-    for (var i = 0; i < 8; i++) {
-      if (scores[i] === undefined) {
-        progress += '-';
-      } else {
-        progress += scores[i].reduce(function(a, b) {
-          return a + b;
-        }, 0);
-      }
-      progress += ' ';
-    }
-    $('#progress').text(progress);
-  }
+	// function updateProgress() {
+	//	 var progress = '';
+	//	 for (var i = 0; i < 8; i++) {
+	//		 if (scores[i] === undefined) {
+	//			 progress += '-';
+	//		 } else {
+	//			 progress += scores[i].reduce(function(a, b) {
+	//				 return a + b;
+	//			 }, 0);
+	//		 }
+	//		 progress += ' ';
+	//	 }
+	//	 $('#progress').text(progress);
+	// }
 
-  $('.js-trigger').click(function() {
-    var points = parseInt($(this).data('number'));
-    score += points;
-    $('#score').text(score);
+	// $('.js-trigger').click(function() {
+	//	 var points = parseInt($(this).data('number'));
+	//	 score += points;
+	//	 $('#score').text(score);
 
-    if (scores[round - 1] === undefined) {
-      scores[round - 1] = [];
-    }
-    scores[round - 1].push(points);
+	//	 if (scores[round - 1] === undefined) {
+	//		 scores[round - 1] = [];
+	//	 }
+	//	 scores[round - 1].push(points);
 
-    if (scores[round - 1].length === 3) {
-      round += 1;
-      updateProgress();
-    }
+	//	 if (scores[round - 1].length === 3) {
+	//		 round += 1;
+	//		 updateProgress();
+	//	 }
 
-    if (round > 8) {
-      // 計算結果を出力する
-      var totalScore = 0;
-      for (var i = 0; i < 8; i++) {
-        var roundScore = scores[i].reduce(function(a, b) {
-          return a + b;
-        }, 0);
-        totalScore += roundScore;
-        console.log('Round ' + (i + 1) + ': ' + roundScore);
-      }
-      console.log('Total Score: ' + totalScore);
+	//	 if (round > 8) {
+	//		 // 計算結果を出力する
+	//		 var totalScore = 0;
+	//		 for (var i = 0; i < 8; i++) {
+	//			 var roundScore = scores[i].reduce(function(a, b) {
+	//				 return a + b;
+	//			 }, 0);
+	//			 totalScore += roundScore;
+	//			 console.log('Round ' + (i + 1) + ': ' + roundScore);
+	//		 }
+	//		 console.log('Total Score: ' + totalScore);
 
-      // ゲームをリセットする
-      score = 0;
-      round = 1;
-      scores = [];
-      $('#score').text(score);
-      $('#progress').text('');
-    }
-  });
+	//		 // ゲームをリセットする
+	//		 score = 0;
+	//		 round = 1;
+	//		 scores = [];
+	//		 $('#score').text(score);
+	//		 $('#progress').text('');
+	//	 }
+	// });
 
 
 

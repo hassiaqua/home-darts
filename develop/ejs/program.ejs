@@ -5,52 +5,66 @@
 <main class="l-main">
 	<div class="l-wrapper">
 
-		<table class="trigger">
-			<tr class="trigger__row">
-				<th class="trigger__head">No</th>
-				<% for (var i = 1; i < 21; i++) { -%>
-				<th class="trigger__head"><%= i %></th>
-				<% } -%>
-			</tr>
-			<tr class="trigger__row">
-				<th class="trigger__head">×1</th>
-				<% for (var i = 1; i < 21; i++) { -%>
-				<td class="trigger__col">
-					<button class="js-trigger" data-number="<%= i %>" data-multiple="1"><%= i %></button>
-				</td>
-				<% } -%>
-			</tr>
-			<tr class="trigger__row">
-				<th class="trigger__head">×2</th>
-				<% for (var i = 1; i < 21; i++) { -%>
-				<td class="trigger__col">
-					<button class="js-trigger" data-number="<%= i %>" data-multiple="2"><%= i * 2 %></button>
-				</td>
-				<% } -%>
-			</tr>
-			<tr class="trigger__row">
-				<th class="trigger__head">×3</th>
-				<% for (var i = 1; i < 21; i++) { -%>
-				<td class="trigger__col">
-					<button class="js-trigger" data-number="<%= i %>" data-multiple="3"><%= i * 3 %></button>
-				</td>
-				<% } -%>
-			</tr>
-		</table>
-		<table class="trigger">
-			<tr class="trigger__row">
-				<td class="trigger__col">
-					<button class="js-trigger" data-number="bull" data-multiple="1">Bull</button>
-				</td>
-				<td class="trigger__col">
-					<button class="js-trigger" data-number="bull" data-multiple="2">Double Bull</button>
-				</td>
-			</tr>
-		</table>
+		<h1 class="head-1">COUNT UP</h1>
 
-		<div id="progress"></div>
+		<div class="l-program">
+			<div class="l-program__trigger">
+				<table class="trigger">
+					<tr class="trigger__row">
+						<th class="trigger__head">No</th>
+						<% for (var i = 1; i < 21; i++) { -%>
+						<th class="trigger__head"><%= i %></th>
+						<% } -%>
+					</tr>
+					<tr class="trigger__row">
+						<th class="trigger__head">×1</th>
+						<% for (var i = 1; i < 21; i++) { -%>
+						<td class="trigger__col">
+							<button class="js-trigger" data-number="<%= i %>" data-multiple="1"><%= i %></button>
+						</td>
+						<% } -%>
+					</tr>
+					<tr class="trigger__row">
+						<th class="trigger__head">×2</th>
+						<% for (var i = 1; i < 21; i++) { -%>
+						<td class="trigger__col">
+							<button class="js-trigger" data-number="<%= i %>" data-multiple="2"><%= i * 2 %></button>
+						</td>
+						<% } -%>
+					</tr>
+					<tr class="trigger__row">
+						<th class="trigger__head">×3</th>
+						<% for (var i = 1; i < 21; i++) { -%>
+						<td class="trigger__col">
+							<button class="js-trigger" data-number="<%= i %>" data-multiple="3"><%= i * 3 %></button>
+						</td>
+						<% } -%>
+					</tr>
+				</table>
+				<table class="trigger">
+					<tr class="trigger__row">
+						<td class="trigger__col">
+							<button class="js-trigger" data-number="50" data-multiple="1">Bull</button>
+						</td>
+						<td class="trigger__col">
+							<button class="js-trigger" data-number="50" data-multiple="1">Double Bull</button>
+						</td>
+					</tr>
+				</table>
+			</div>
 
-		<div id="score"></div>
+			<div class="l-program__result">
+				<div class="l-program__progress">
+					<h2 class="head-2">Round Score</h2>
+					<div class="js-progress progress"></div>
+				</div>
+				<div class="l-program__score">
+					<h2 class="head-2">Total Score</h2>
+					<div class="js-score score"></div>
+				</div>
+
+			</div>
+		</div>
 
 	</div>
 </main>

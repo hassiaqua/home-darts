@@ -13,10 +13,12 @@
 /* Module */
 @use "module/test";
 
+@use "module/head";
+
 @use "module/board";
 @use "module/trigger";
-// @use "module/xxxxx";
-// @use "module/xxxxx";
+@use "module/progress";
+@use "module/score";
 // @use "module/xxxxx";
 // @use "module/xxxxx";
 // @use "module/xxxxx";

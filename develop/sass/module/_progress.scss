@@ -1,0 +1,15 @@
+@use "../_config/" as *;
+@use "sass:math";
+
+.progress{
+	&__row{
+		display: flex;
+		margin-bottom: 10px;
+	}
+	&__col{
+		width: calc(100% / 3);
+		font-size: 2rem;
+		font-weight: 700;
+		text-align: center;
+	}
+}

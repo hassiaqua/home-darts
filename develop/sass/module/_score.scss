@@ -1,0 +1,13 @@
+@use "../_config/" as *;
+@use "sass:math";
+
+.score{
+	font-size: 8rem;
+	font-weight: 700;
+	text-align: center;
+	color: $red;
+	&.is-end{
+		background: $red;
+		color: #FFFFFF;
+	}
+}

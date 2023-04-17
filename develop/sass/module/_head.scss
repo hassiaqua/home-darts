@@ -1,0 +1,17 @@
+@use "../_config/" as *;
+@use "sass:math";
+
+.head-1{
+	margin-bottom: 1em;
+	font-size: 3rem;
+	line-height: 1.5;
+	font-weight: 700;
+	text-align: center;
+}
+.head-2{
+	margin-bottom: 1em;
+	font-size: 2rem;
+	line-height: 1.5;
+	font-weight: 700;
+	border-bottom: 2px solid $black;
+}

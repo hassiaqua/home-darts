@@ -46,31 +46,7 @@ function smoothScroll(target) {
 	$("html, body").animate({scrollTop:position}, anchorSpeed, "swing");
 }
 
-/* SCROLL BLOCK - メニュー等が開いている間はコンテンツがスクロールしないよう制御
-*********************************************/
-function scrollBlocker(flag){
-	if(flag){
-		scrollpos = $(window).scrollTop();
-		$('.l-body').addClass('is-fixed').css({'top': -scrollpos});
-	} else {
-		$('.l-body').removeClass('is-fixed').removeAttr('style');
-		window.scrollTo( 0 , scrollpos );
-	}
-}
-// scrollBlocker(true); //スクロールブロック有効
-// scrollBlocker(false); //スクロールブロック無効
 
-/* sp menu
-*********************************************/
-// $('.menu-btn').click(function(){
-// 	$('.l-navi').fadeToggle(400);
-// 	$(this).toggleClass('is-opend');
-// 	if($('.l-body').hasClass('is-fixed')) {
-// 		scrollBlocker(false);
-// 	} else {
-// 		scrollBlocker(true);
-// 	}
-// });
 
 /* calc
 *********************************************/
@@ -89,11 +65,14 @@ function input() {
 		if (hit_number === 'bull') { //bullの場合
 			if (hit_multiple == '1') {
 				hit_score = 50;
+				bullSound();
 			} else if(hit_multiple == '2'){
 				hit_score = 50;
+				bullSound();
 			}
 		} else { //bull以外の場合
 			hit_score = hit_number * hit_multiple;
+			singleSound();
 		}
 
 		countup(hit_score);
@@ -158,6 +137,17 @@ function countup(score) {
 	//配列初期化
 	countup_array_leg = [];
 }
+
+function bullSound() {
+	const bull = new Audio('audio/bull.wav');
+	bull.play();
+}
+
+function singleSound() {
+	const single = new Audio('audio/single.m4a');
+	single.play();
+}
+
 
 	// var score = 0;
 	// var round = 1;
